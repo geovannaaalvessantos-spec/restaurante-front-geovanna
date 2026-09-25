@@ -20,7 +20,7 @@ export default function CardapioAdmin() {
     async function carregarProdutos() {
         try {
             const response = await fetch(
-                "http://localhost:3001/produtos"
+                `${process.env.NEXT_PUBLIC_API_URL}/produtos`
             )
 
             if (!response.ok) {
@@ -66,7 +66,7 @@ export default function CardapioAdmin() {
         try {
 
             const response = await fetch(
-                `http://localhost:3001/produtos/${id}`,
+                `${process.env.NEXT_PUBLIC_API_URL}/produtos/${id}`,
                 {
                     method: "DELETE"
                 }
